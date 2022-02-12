@@ -4,7 +4,7 @@
   "description": "blok tech json ding",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/PipHarsveld/projectTech#readme",
   "dependencies": {
-    "camelcase": "^6.3.0"
+    "camelcase": "^6.3.0",
+    "express": "^4.17.2"
   }
 }
