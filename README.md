@@ -1,8 +1,7 @@
 # :heart:Project tech matching app:fork_and_knife:
-Project description
-What your application does,
-Why you used the technologies you used,
-Some of the challenges you faced and features you hope to implement in the future.
+~Name app~ is a matching application where users can match with restaurants. Users can create an account, fill in their preferences and set filters. Then the app shows a list of restaurants that meet the user's wishes and the user can start swiping the cards left and right. All restaurants that the user swiped to the right will appear in the favorites list, where the user can chat with the restaurant or place a reservation immediately.
+
+I have chosen to focus on the functionality where the user can swipe the cards and save the favorites in a favorites list.
 
 
 ## :rocket:Install and Run the project
