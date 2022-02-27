@@ -1,0 +1,82 @@
+*, *::after, *::before {
+    box-sizing:border-box;  
+    margin: 0;
+  }
+    
+:root{
+    --lettertype-koppen: 'Nunito', sans-serif;
+    --lettertype-paragraaf: 'Roboto', Arial, Helvetica, sans-serif;
+
+    --lettertype-kleur1: #000000;
+    --lettertype-kleur2: #ffffff;
+    --hoofdkleur-donker: #4934B7;
+    --hoofdkleur-licht: #6248E9;
+    --accentkleur1: #FC6088;
+    --extrakleur-licht: #B4F1B9;
+    --extrakleur-donker: #7DC281;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--lettertype-koppen);
+}
+
+h1{
+    font-size: 2.5rem;
+    color: var(--lettertype-kleur2);
+}
+
+p, li, a{
+    font-family: var(--lettertype-paragraaf);
+}
+
+ul li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#home > section:first-of-type{
+    background-color: var(--hoofdkleur-licht);
+    background-color: var(--hoofdkleur-donker);
+}
+
+#home article{
+    background-color: var(--hoofdkleur-licht);
+    padding: 1rem;
+}
+
+#home article img{
+    width: 85vw;
+    text-align: center;
+}
+
+#home article ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+#home ul li img{
+    width: 2rem;
+}
+
+#home section ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+#home nav{
+    position: static;
+    bottom: 0;
+}
+
+#home nav ul{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+}
