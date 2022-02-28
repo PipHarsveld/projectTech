@@ -1,7 +1,7 @@
 {
   "name": "bloktech",
   "version": "1.0.0",
-  "description": "blok tech json ding",
+  "description": "blok tech package.json",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/PipHarsveld/projectTech.git"
   },
-  "author": "Pip",
+  "author": "Pip Harsveld",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PipHarsveld/projectTech/issues"
