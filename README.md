@@ -9,6 +9,6 @@ I have chosen to focus on the functionality where the user can swipe the cards a
 
 ## :book:How to use the project
 
-## :page_with_curl:License
+## :page_facing_up:License
 Copyright © 2022 Pip Harsveld.<br>
 This project is [MIT](https://github.com/PipHarsveld/projectTech/blob/main/LICENSE) licensed.
