@@ -60,7 +60,7 @@ ul li{
     width: 2rem;
 }
 
-#home section ul{
+#home > ul{
     display: flex;
     justify-content: space-around;
     padding: 0;
@@ -81,6 +81,6 @@ ul li{
     padding: 0;
 }
 
-#home form button img{
-    width: 2rem;
+#home form{
+    margin-bottom: 5rem;
 }
