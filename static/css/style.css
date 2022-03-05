@@ -16,17 +16,27 @@
     --extrakleur-donker: #7DC281;
 }
 
+#home{
+    margin: 0 5% 0 5%;
+}
+
 h1, h2, h3, h4{
     font-family: var(--lettertype-koppen);
 }
 
 h1{
-    font-size: 2.5rem;
-    color: var(--lettertype-kleur2);
+    font-size: 1.5rem;
+    text-align: center;
+    /* color: var(--lettertype-kleur2); */
 }
 
 p, li, a{
     font-family: var(--lettertype-paragraaf);
+}
+
+img{
+    width: 2rem;
+    height: auto;
 }
 
 ul li{
@@ -36,28 +46,34 @@ ul li{
 }
 
 
-#home > section:first-of-type{
+/* #home > section:first-of-type{
     background-color: var(--hoofdkleur-licht);
     background-color: var(--hoofdkleur-donker);
+} */
+
+#home header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #home article{
-    background-color: var(--hoofdkleur-licht);
-    padding: 1rem;
+    /* background-color: var(--hoofdkleur-licht); */
+    padding-bottom: 1rem;
 }
 
-#home article img{
-    width: 85vw;
+/* afbeelding restaurant */
+#home article > img{
+    width: 100%;
     text-align: center;
+    border-radius: 1.5rem 1.5rem 0 0;
 }
 
 #home article ul{
     display: flex;
     justify-content: space-around;
-}
-
-#home ul li img{
-    width: 2rem;
 }
 
 #home > ul{
@@ -79,6 +95,31 @@ ul li{
     bottom: 0;
     width: 100%;
     padding: 0;
+}
+
+#home article > div{
+    border: .1rem solid #000000;
+    border-top: 0;
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: .5rem;
+    margin-top: -.3rem;
+}
+
+#home article > div div{
+    display: flex;
+    align-items: center;
+}
+
+#home article > div div h2{
+    text-align: center;
+}
+
+#home article > div div p{
+    align-self: right;
+}
+
+#home article > div ul{
+    padding-left: 0;
 }
 
 #home form{
