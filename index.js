@@ -41,7 +41,6 @@ app.use((req, res, next) => {
 
 
 
-
 // Moet altijd onderaan blijven!
 app.listen(PORT, function() {
   console.log("Port running on ", PORT)
