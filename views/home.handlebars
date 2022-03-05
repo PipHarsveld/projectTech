@@ -1,41 +1,37 @@
 <main id="home">
-    <section>
+    <header>
+        <img src="../static/img/undo.png" alt="Vorigebtn">
         <h1>Restaurant Matching</h1>
-    </section>
+        <img src="../static/img/filter.png" alt="Filter">
+    </header>
     <article>
         <img src="../static/img/eetcafe_klaas.jpg" alt="Interieur van Eetcafe Klaas">
-        <h2>Eetcafé Klaas</h2>
-        <p>&#8364; &#8364;</p>
-        <ul>
-            <li>Eetcafé</li>
-            <li>Huiselijke sfeer</li>
-            <li>Uitgeest</li>
-        </ul>
-        <p>Een fijne plek in Uitgeest om te genieten van goede wijnen, gin en tonics en mooie smakelijke gerechten voor een schappelijke prijs.</p>
+        <div>
+            <div>
+                <h2>Eetcafé Klaas</h2>
+                <p>&#8364; &#8364;</p>
+            </div>
+            <ul>
+                <li>Eetcafé</li>
+                <li>Huiselijke sfeer</li>
+                <li>Uitgeest</li>
+            </ul>
+            <p>Een fijne plek in Uitgeest om te genieten van goede wijnen, gin en tonics en mooie smakelijke gerechten voor een schappelijke prijs.</p>
+            <ul>
+                <li><img src="../static/img/cancel.png" alt="Verwijderen"></li>
+                <li><img src="../static/img/diet.png" alt="Opslaan"></li>
+            </ul>
+        </div>
     </article>
-    <form action="/about" method="POST">
+    {{!-- <form action="/about" method="POST">
         Username : <input type="text" name="user"><br>
         Password : <input type="password" name="password"><br>
         <input type="submit">
-    </form>
-    {{!-- <form action="" method="post" enctype="multipart/form-data">
-        <label for="email">Enter your email:</label>
-        <input type="email" id="email">
-        <input type="submit" value="Submit">
-        
-         <button type="submit" value="Submit"><img src="../static/img/cancel.png" alt="Verwijderen"></button>
-        <button type="submit" value="Submit"><img src="../static/img/diet.png" alt="Opslaan"></button> --}}
-        <ul>
-            <li><img src="../static/img/undo.png" alt="Vorige"></li>
-            <li><img src="../static/img/cancel.png" alt="Verwijderen"></li>
-            <li><img src="../static/img/diet.png" alt="Opslaan"></li>
-            <li><img src="../static/img/booking.png" alt="Reserveren"></li>
-        </ul>
+    </form>         --}}
     <nav>
         <ul>
-            <li><img src="../static/img/restaurant.png" alt="home"></li>
-            <li><img src="../static/img/diet.png" alt="Favorieten"></li>
             <li><img src="../static/img/bubble-chat.png" alt="chat"></li>
+            <li><img src="../static/img/diet.png" alt="Favorieten"></li>
             <li><img src="../static/img/user (2).png" alt="profiel"></li>
         </ul>
     </nav>
