@@ -16,10 +16,13 @@
     --extrakleur-donker: #7DC281;
 }
 
-#home{
-    margin: 0 5% 0 5%;
-}
 
+
+
+
+/*******************/
+/* ALGEMENE OPMAAK */
+/*******************/
 h1, h2, h3, h4{
     font-family: var(--lettertype-koppen);
 }
@@ -46,48 +49,106 @@ ul li{
 }
 
 
-/* #home > section:first-of-type{
-    background-color: var(--hoofdkleur-licht);
-    background-color: var(--hoofdkleur-donker);
-} */
 
-#home header{
+
+
+/**********/
+/* HEADER */
+/**********/
+#home{
+    background: rgb(73,52,183);
+    background: linear-gradient(180deg, rgba(73,52,183,0.7) 0%, rgba(82,72,233,0.15) 100%);
+}
+
+#home > header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
     margin-bottom: 1rem;
+    padding: 1rem 5% 0 5%;
 }
 
-#home article{
-    /* background-color: var(--hoofdkleur-licht); */
+
+
+
+
+/*************************/
+/* CARDS MET RESTAURANTS */
+/*************************/
+#home > article{
     padding-bottom: 1rem;
+    padding: 0 5% 0 5%;
 }
 
 /* afbeelding restaurant */
-#home article > img{
+#home > article > img{
     width: 100%;
     text-align: center;
     border-radius: 1.5rem 1.5rem 0 0;
 }
 
-#home article ul{
-    display: flex;
-    justify-content: space-around;
+/* onderste deel van de card */
+#home > article > div{
+    border-top: 0;
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: .5rem;
+    margin-top: -.3rem;
+    background-color: var(--lettertype-kleur2);
 }
 
-#home > ul{
+/* Naam restaurant en prijsindicatie */
+#home > article > div > div{
     display: flex;
-    justify-content: space-around;
-    padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
-#home nav{
+#home > article > div > div > h2{
+    text-align: center;
+}
+
+
+/* tags */
+#home > article > div > ul{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+
+#home > article > div > ul > li{
+    border: .1rem solid #4934B7;
+    border-radius: 1rem;
+    padding: .2rem .5rem;
+}
+
+/* like en dislike buttons */
+#home > article > div > section{
+    display: flex;
+}
+
+#home > article > div > section > form:last-of-type{
+    margin-left: auto;
+}
+
+#home > article > div > section > form > input[type=image]{
+    width: 2rem;
+    height: auto;
+}
+
+
+
+
+
+/*************************/
+/* NAVIGATIEBALK ONDEROP */
+/*************************/
+#home > nav{
     position: static;
     bottom: 0;
+    padding: 0 5% 0 5%;
 }
 
-#home nav ul{
+#home > nav ul{
     display: flex;
     justify-content: space-around;
     position: fixed;
@@ -95,33 +156,4 @@ ul li{
     bottom: 0;
     width: 100%;
     padding: 0;
-}
-
-#home article > div{
-    border: .1rem solid #000000;
-    border-top: 0;
-    border-radius: 0 0 1.5rem 1.5rem;
-    padding: .5rem;
-    margin-top: -.3rem;
-}
-
-#home article > div div{
-    display: flex;
-    align-items: center;
-}
-
-#home article > div div h2{
-    text-align: center;
-}
-
-#home article > div div p{
-    align-self: right;
-}
-
-#home article > div ul{
-    padding-left: 0;
-}
-
-#home form{
-    margin-bottom: 5rem;
 }
