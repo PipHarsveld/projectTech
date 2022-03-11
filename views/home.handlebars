@@ -1,9 +1,5 @@
 <main id="home">
-    <header>
-        <img src="../static/img/undo.png" alt="Vorigebtn">
-        <h1>Restaurant Matching</h1>
-        <img src="../static/img/filter.png" alt="Filter">
-    </header>
+    {{>header}}
     <article>
         <img src="../static/img/eetcafe_klaas.jpg" alt="Interieur van Eetcafe Klaas">
         <div>
@@ -12,30 +8,26 @@
                 <p>{{restaurant1.prijs}}</p>
             </div>
             <ul>
-                <li>Eetcafé</li>
-                <li>Huiselijke sfeer</li>
-                <li>Uitgeest</li>
+                {{#each restaurant1.tags}}
+                    <li>{{this}}</li>
+                {{/each}}
             </ul>
             <p>{{restaurant1.omschrijving}}</p>
             <section>
                 <form action="/dislike" method="POST">
-                    <input type="hidden" name="userId" value="restaurant1"><br>
+                    <input type="hidden" name="naam" value="Eetcafé Klaas"><br>
+                    <input type="hidden" name="restaurantId" value=1><br>
                     <input type="hidden" name="voorkeur" value="dislike"><br>
                     <input type="image" src="../static/img/cancel.png" alt="Dislike button">
                 </form>
                 <form action="/like" method="POST">
-                    <input type="hidden" name="userId" value="restaurant1"><br>
+                    <input type="hidden" name="naam" value="Eetcafé Klaas"><br>
+                    <input type="hidden" name="restaurantId" value=1><br>
                     <input type="hidden" name="voorkeur" value="like"><br>
                     <input type="image" src="../static/img/love.png" alt="Like button">
                 </form>
             </section>
         </div>
     </article>
-    <nav>
-        <ul>
-            <li><img src="../static/img/bubble-chat.png" alt="chat"></li>
-            <li><img src="../static/img/diet.png" alt="Favorieten"></li>
-            <li><img src="../static/img/user (2).png" alt="profiel"></li>
-        </ul>
-    </nav>
+    {{>nav}}
 </main>
