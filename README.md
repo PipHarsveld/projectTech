@@ -5,7 +5,20 @@ I have chosen to focus on the functionality where the user can swipe the cards a
 
 
 ## :rocket:Install and Run the project
+To use the restaurant matching app, you will have to clone this repo. You can do this by typing the following command in your terminal:
+```
+git clone https://github.com/PipHarsveld/projectTech
+```
 
+The next step is to install the corresponding npm packages with the following command:
+```
+npm install
+```
+
+Congrats! You have now installed the restaurant matching app! The only thing left to do is run the application with:
+```
+npm start
+```
 
 ## :book:How to use the project
 
