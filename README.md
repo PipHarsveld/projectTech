@@ -21,6 +21,7 @@ npm start
 ```
 
 ## :book:How to use the project
+If you have any questions or suggestions, please contact me! You can do this by creating an issue, and I'll answer you as fast as I can :)
 
 ## :page_facing_up:License
 Copyright © 2022 Pip Harsveld.<br>
