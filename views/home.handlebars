@@ -1,18 +1,20 @@
 <main id="home">
     {{>header}}
+
+    {{!-- {{#each data}} --}}
     <article>
         <img src="../static/img/eetcafe_klaas.jpg" alt="Interieur van Eetcafe Klaas">
         <div>
             <div>
-                <h2>{{restaurant1.naam}}</h2>
-                <p>{{restaurant1.prijs}}</p>
+                <h2>{{data.[1].naam}}</h2>
+                <p>{{this.prijs}}</p>
             </div>
             <ul>
-                {{#each restaurant1.tags}}
+                {{#each this.tags}}
                     <li>{{this}}</li>
                 {{/each}}
             </ul>
-            <p>{{restaurant1.omschrijving}}</p>
+            <p>{{this.omschrijving}}</p>
             <section>
                 <form action="/dislike" method="POST">
                     <input type="hidden" name="naam" value="Eetcafé Klaas"><br>
@@ -29,5 +31,7 @@
             </section>
         </div>
     </article>
+    {{!-- {{/each}} --}}
+
     {{>nav}}
 </main>
