@@ -6,7 +6,7 @@ const restaurantSchema = new mongoose.Schema({
         required: true,
     },
     id: Number,
-    voorkeur: String,
+    voorkeur: String
     // prijs: String,
     // tags: [String],
     // omschrijving: String,
@@ -17,4 +17,4 @@ const restaurantSchema = new mongoose.Schema({
     // }
 })
 
-module.exports = mongoose.model('Restaurant', restaurantSchema)
+module.exports = mongoose.model('restaurant', restaurantSchema)
