@@ -1,12 +1,12 @@
 <main id="home">
     {{>header}}
 
-    {{!-- {{#each data}} --}}
+    {{#each data}}
     <article>
-        <img src="../static/img/eetcafe_klaas.jpg" alt="Interieur van Eetcafe Klaas">
+        <img src="../static/img/{{this.id}}.jpg" alt="Interieur van het restaurant">
         <div>
             <div>
-                <h2>{{data.[1].naam}}</h2>
+                <h2>{{this.naam}}</h2>
                 <p>{{this.prijs}}</p>
             </div>
             <ul>
@@ -17,21 +17,19 @@
             <p>{{this.omschrijving}}</p>
             <section>
                 <form action="/dislike" method="POST">
-                    <input type="hidden" name="naam" value="Eetcafé Klaas"><br>
-                    <input type="hidden" name="restaurantId" value=1><br>
-                    <input type="hidden" name="voorkeur" value="dislike"><br>
+                    {{!-- <input type="hidden" name="naam" value="{{this.naam}}"><br>
+                    <input type="hidden" name="restaurantId" value={{this.id}}><br>
+                    <input type="hidden" name="voorkeur" value="dislike"><br> --}}
                     <input type="image" src="../static/img/cancel.png" alt="Dislike button">
                 </form>
                 <form action="/like" method="POST">
-                    <input type="hidden" name="naam" value="Eetcafé Klaas"><br>
-                    <input type="hidden" name="restaurantId" value=1><br>
-                    <input type="hidden" name="voorkeur" value="like"><br>
+                    {{!-- <input type="hidden" name="naam" value="{{this.naam}}"><br>
+                    <input type="hidden" name="restaurantId" value={{this.id}}><br>
+                    <input type="hidden" name="voorkeur" value="like"><br> --}}
                     <input type="image" src="../static/img/love.png" alt="Like button">
                 </form>
             </section>
         </div>
     </article>
-    {{!-- {{/each}} --}}
-
-    {{>nav}}
+    {{/each}}
 </main>
