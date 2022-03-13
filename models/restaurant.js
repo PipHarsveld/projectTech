@@ -6,15 +6,10 @@ const restaurantSchema = new mongoose.Schema({
         required: true,
     },
     id: Number,
-    voorkeur: String
-    // prijs: String,
-    // tags: [String],
-    // omschrijving: String,
-    // swipedOp: {
-    //     type: Date,
-    //     inmutable: true.valueOf,
-    //     default: () => Date.now(), //Huidige datum opslaan
-    // }
+    voorkeur: String,
+    prijs: String,
+    tags: [String],
+    omschrijving: String,
 })
 
 module.exports = mongoose.model('restaurant', restaurantSchema)
