@@ -22,65 +22,70 @@ const PORT = 3000
   app.set('views', './views')
 
   app.get('/', onhome)
-  app.get('/like', onlike)
-  app.get('/dislike', ondislike)
+  // app.get('/favorieten', onfavo)
+  // app.get('/like', onlike)
+  // app.get('/dislike', ondislike)
 
-app.post('/like',(req,res)=> {
-  console.log('Yes! Je hebt '+ req.body.naam + ' een ' + req.body.voorkeur + ' gegeven.');
-});
-
-app.post('/dislike',(req,res)=> {
-  console.log('Ahh, je hebt '+ req.body.naam + ' een ' + req.body.voorkeur + ' gegeven.');
-});
 
 // Wordt getoond op de card, zichtbaar voor gebruiker
 async function onhome(req, res){
-  const data = await restaurant.find({})
+  try{
+    // laat alleen de restaurants zien die de gebruiker nog niet heeft geswiped
+    const data = await restaurant.findOne({voorkeur: ''}).exec()
+    res.render('home', {data: data})
+    
 
-  res.render('home', {data: data})
-  console.log(data)
-
-  // res.render('home', {
-  //   restaurant1: {
-  //     naam: "Eetcafé Klaas",
-  //     prijs: "€€",
-  //     tags: [
-  //       "Eetcafé",
-  //       "Huiselijke sfeer",
-  //       "Uitgeest",
-  //     ],
-  //     omschrijving: "Een fijne plek in Uitgeest om te genieten van goede wijnen, gin en tonics en mooie smakelijke gerechten voor een schappelijke prijs."
-  //   },
-  //   restaurant2: {
-  //     naam: "'t Schippersrijk",
-  //     prijs: "€€",
-  //     tags: [
-  //       "Bistro",
-  //       "Vega",
-  //       "Uitgeestermeer",
-  //     ],
-  //     omschrijving: "Kom langs en beleef onze gezellige sfeer aan het Uitgeestermeer! Een ongedwongen sfeer waar goed eten, lekker zitten en persoonlijke service op de absolute nummer één staan."
-  //   },
-  //   restaurant3: {
-  //     naam: "Spijkers",
-  //     prijs: "€€",
-  //     tags: [
-  //       "Bistro",
-  //       "Modern",
-  //       "Heemskerk",
-  //     ],
-  //     omschrijving: "Spijkers Heemskerk is de perfecte plek om volop te genieten van heerlijke gerechten tijdens een gezellige lunch of een mooie avond."
-  //   }
-  // })
+  } catch{
+    console.log("error")
+  }
 }
 
-function onlike(req, res){
-  res.render('like', {title: "like pagina"})
-}
+// Wanneer gebruiker een card heeft geliked
+app.post('/like', async(req,res)=> {
+  try{
+    restaurant.findOneAndUpdate({voorkeur: ''}, {voorkeur: 'like'}).exec()
+    const data = await restaurant.findOne({voorkeur: ''}).exec()
+    res.render('home', {data: data})
+    console.log("like")
+  }catch{
+    console.log("fout bij liken")
+  }
+  
+})
 
-function ondislike(req, res){
-  res.render('dislike')
-}
+// Wanneer gebruiker een card heeft gedisliked
+app.post('/dislike', async(req,res)=> {
+  try{
+    restaurant.findOneAndUpdate({voorkeur: ''}, {voorkeur: 'dislike'}).exec()
+    const data = await restaurant.findOne({voorkeur: ''}).exec()
+    res.render('home', {data: data})
+    console.log("dislike")
+  }catch{
+    console.log("fout bij disliken")
+  }
+})
+
+// Toon lijst met gelikete restaurants
+app.post('/favorieten', async(req,res)=> {
+  try{
+    const data = await restaurant.find({voorkeur: 'like'}).lean()
+    res.render('favorieten', {data: data})
+  }catch{
+    console.log("fout bij laden favorieten")
+  }
+})
+
+// Verwijder uit favorieten
+app.post('/verwijder', async(req,res)=> {
+  try{
+    restaurant.findOneAndUpdate({voorkeur: 'like'}, {voorkeur: 'dislike'}).exec()
+    const data = await restaurant.find({voorkeur: 'like'}).lean()
+    res.render('favorieten', {data: data})
+    console.log("dislike")
+  }catch{
+    console.log("fout bij verwijderen")
+  }
+})
 
 app.use((req, res, next) => {
   res.status(404).send('404 page not found')
