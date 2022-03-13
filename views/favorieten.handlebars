@@ -1,0 +1,26 @@
+<main id="home">
+    {{>header}}
+
+    {{#each data}}
+    <article>
+        <img src="../static/img/{{this.id}}.jpg" alt="Interieur van het restaurant">
+        <div>
+            <div>
+                <h2>{{this.naam}}</h2>
+                <p>{{this.prijs}}</p>
+            </div>
+            <ul>
+                {{#each this.tags}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p>{{this.omschrijving}}</p>
+            <section>
+                <form action="/verwijder" method="POST">
+                    <input type="image" src="../static/img/cancel.png" alt="Dislike button">
+                </form>
+            </section>
+        </div>
+    </article>
+    {{/each}}
+</main>
