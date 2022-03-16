@@ -4,8 +4,7 @@
   "description": "blok tech package.json",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "deploy": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
