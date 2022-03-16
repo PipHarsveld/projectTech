@@ -1,7 +1,14 @@
-# :heart:Project tech matching app:fork_and_knife:
+# :heart:Dinder:fork_and_knife:
 Dinder, the app where Tinder and Dinner come together! Dinder is a matching application where users can match with restaurants. Users can create an account, fill in their preferences and set filters. Then the app shows a list of restaurants that meet the user's wishes and the user can start swiping the cards left and right. All restaurants that the user swiped to the right will appear in the favorites list, where the user can chat with the restaurant or place a reservation immediately.
 
+## :sparkles:Features
 I have chosen to focus on the functionality where the user can swipe the cards and save the favorites in a favorites list.
+|Features|
+|:-------|
+|Swipe left and right on cards|
+|Save the liked cards in favorites list|
+|Start all over with swiping|
+|Remove cards from favorites list|
 
 
 ## :rocket:Install and Run the project
@@ -20,8 +27,14 @@ Congrats! You have now installed Dinder! The only thing left to do is run the ap
 npm start
 ```
 
-## :book:How to use the project
-If you have any questions or suggestions, please contact me! You can do this by creating an issue, and I'll answer you as fast as I can :)
+## :busts_in_silhouette:Contribute
+If you have any questions or suggestions, please contact me! You can do this by creating an [issue](https://github.com/PipHarsveld/projectTech/issues), and I'll answer you as fast as I can :)
+
+## :memo:Documentation
+For further documentation, see the [wiki](https://github.com/PipHarsveld/projectTech/wiki) of this repository
+
+## :technologist:Author
+This project is designed and created by [Pip Harsveld](https://github.com/PipHarsveld).
 
 ## :page_facing_up:License
 Copyright © 2022 Pip Harsveld.<br>
