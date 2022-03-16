@@ -33,8 +33,6 @@ async function onhome(req, res){
     // laat alleen de restaurants zien die de gebruiker nog niet heeft geswiped
     const data = await restaurant.findOne({voorkeur: ''}).exec()
     res.render('home', {data: data})
-    
-
   } catch{
     console.log("error")
   }
@@ -84,6 +82,17 @@ app.post('/verwijder', async(req,res)=> {
     console.log("dislike")
   }catch{
     console.log("fout bij verwijderen")
+  }
+})
+
+// Refresh de database
+app.post('/refresh', async(req,res)=> {
+  try{
+    restaurant.updateMany({}, {voorkeur: ''}).exec()
+    const data = await restaurant.findOne({voorkeur: ''}).exec()
+    res.render('home', {data: data})
+  }catch{
+    console.log("fout bij refreshen")
   }
 })
 
