@@ -22,10 +22,20 @@ The next step is to install the corresponding npm packages with the following co
 npm install
 ```
 
-Congrats! You have now installed Dinder! The only thing left to do is run the application with:
+This project uses a MongoDB database. Unfortunately it is not possible to use my database, but it is quite easy to arrange this yourself. You can create an account at [MongoDB](https://www.mongodb.com/cloud/atlas/register) and then you can create a database there. Then you can create an .env file in your code editor and put the following line in it:
+```
+MONGO_URI=Link to your own database
+```
+
+You have now linked Dinder to your own database! All you have to do now is fill the database with restaurants. You can find more information about this at the [database structure](https://github.com/PipHarsveld/projectTech/wiki/database-structure) page in my wiki.
+
+The only thing left to do is run the application with:
 ```
 npm start
 ```
+
+Congrats, you are now all set! Go to localhost:3000 in your browser and enjoy using Dinder!
+
 
 ## :busts_in_silhouette:Contribute
 If you have any questions or suggestions, please contact me! You can do this by creating an [issue](https://github.com/PipHarsveld/projectTech/issues), and I'll answer you as fast as I can :)
