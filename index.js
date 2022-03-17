@@ -22,9 +22,6 @@ const PORT = process.env.PORT || 3000
   app.set('views', './views')
 
   app.get('/', onhome)
-  // app.get('/favorieten', onfavo)
-  // app.get('/like', onlike)
-  // app.get('/dislike', ondislike)
 
 
 // Wordt getoond op de card, zichtbaar voor gebruiker
@@ -48,7 +45,6 @@ app.post('/like', async(req,res)=> {
   }catch{
     console.log("fout bij liken")
   }
-  
 })
 
 // Wanneer gebruiker een card heeft gedisliked
