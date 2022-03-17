@@ -22,7 +22,7 @@ The next step is to install the corresponding npm packages with the following co
 npm install
 ```
 
-This project uses a MongoDB database. Unfortunately it is not possible to use my database, but it is quite easy to arrange this yourself. You can create an account at [MongoDB](https://www.mongodb.com/cloud/atlas/register) and then you can create a database there. Then you can create an .env file in your code editor and put the following line in it:
+This project uses a MongoDB database. Unfortunately it is not possible to use my database, but it is quite easy to arrange this yourself. You can register for [MongoDB](https://www.mongodb.com/cloud/atlas/register) and then you can create a database there. Then you can create an .env file in your code editor and put the following line in it:
 ```
 MONGO_URI=Link to your own database
 ```
