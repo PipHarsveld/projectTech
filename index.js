@@ -15,7 +15,7 @@ require('dotenv').config()
 
 connectDB()
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
   app.use('/static',express.static('static'))
   app.engine('handlebars', engine())
   app.set('view engine', 'handlebars')
