@@ -1,7 +1,9 @@
 <main id="home">
     {{>header}}
+    <section>
 
-    <article>
+    </section>
+    <article id="card">
         <img src="../static/img/{{data.id}}.jpg" alt="Interieur van het restaurant">
         <div>
             <div>
@@ -16,15 +18,9 @@
             <p>{{data.omschrijving}}</p>
             <section>
                 <form action="/dislike" method="POST">
-                    {{!-- <input type="hidden" name="naam" value="{{this.naam}}"><br>
-                    <input type="hidden" name="restaurantId" value={{this.id}}><br>
-                    <input type="hidden" name="voorkeur" value="dislike"><br> --}}
                     <input type="image" src="../static/img/cancel.png" alt="Dislike button">
                 </form>
                 <form action="/like" method="POST">
-                    {{!-- <input type="hidden" name="naam" value="{{this.naam}}"><br>
-                    <input type="hidden" name="restaurantId" value={{this.id}}><br>
-                    <input type="hidden" name="voorkeur" value="like"><br> --}}
                     <input type="image" src="../static/img/love.png" alt="Like button">
                 </form>
             </section>
