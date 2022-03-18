@@ -1,20 +1,19 @@
 <main id="home">
     {{>header}}
 
-    {{#each data}}
     <article>
-        <img src="../static/img/{{this.id}}.jpg" alt="Interieur van het restaurant">
+        <img src="../static/img/{{data.id}}.jpg" alt="Interieur van het restaurant">
         <div>
             <div>
-                <h2>{{this.naam}}</h2>
-                <p>{{this.prijs}}</p>
+                <h2>{{data.naam}}</h2>
+                <p>{{data.prijs}}</p>
             </div>
             <ul>
-                {{#each this.tags}}
+                {{#each data.tags}}
                     <li>{{this}}</li>
                 {{/each}}
             </ul>
-            <p>{{this.omschrijving}}</p>
+            <p>{{data.omschrijving}}</p>
             <section>
                 <form action="/dislike" method="POST">
                     {{!-- <input type="hidden" name="naam" value="{{this.naam}}"><br>
@@ -31,5 +30,5 @@
             </section>
         </div>
     </article>
-    {{/each}}
+
 </main>
