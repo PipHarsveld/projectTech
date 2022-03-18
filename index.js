@@ -23,11 +23,12 @@ app.set("views", "./views");
 
 app.get("/", onhome);
 
+
 // Wordt getoond op de card, zichtbaar voor gebruiker
 async function onhome(req, res) {
     try {
     // laat alleen de restaurants zien die de gebruiker nog niet heeft geswiped
-        const data = await restaurant.findOne({ voorkeur: "" }).exec();
+    const data = await restaurant.findOne({ voorkeur: "" }).lean().exec()
         res.render("home", { data: data });
     } catch {
         console.log("error");
@@ -37,8 +38,8 @@ async function onhome(req, res) {
 // Wanneer gebruiker een card heeft geliked
 app.post("/like", async (req, res) => {
     try {
-        restaurant.findOneAndUpdate({ voorkeur: "" }, { voorkeur: "like" }).exec();
-        const data = await restaurant.findOne({ voorkeur: "" }).exec();
+        restaurant.findOneAndUpdate({ voorkeur: "" }, { voorkeur: "like" }).lean().exec();
+        const data = await restaurant.findOne({ voorkeur: "" }).lean().exec();
         res.render("home", { data: data });
         console.log("like");
     } catch {
@@ -49,10 +50,8 @@ app.post("/like", async (req, res) => {
 // Wanneer gebruiker een card heeft gedisliked
 app.post("/dislike", async (req, res) => {
     try {
-        restaurant
-            .findOneAndUpdate({ voorkeur: "" }, { voorkeur: "dislike" })
-            .exec();
-        const data = await restaurant.findOne({ voorkeur: "" }).exec();
+        restaurant.findOneAndUpdate({ voorkeur: "" }, { voorkeur: "dislike" }).lean().exec();
+        const data = await restaurant.findOne({ voorkeur: "" }).lean().exec();
         res.render("home", { data: data });
         console.log("dislike");
     } catch {
@@ -63,7 +62,7 @@ app.post("/dislike", async (req, res) => {
 // Toon lijst met gelikete restaurants
 app.post("/favorieten", async (req, res) => {
     try {
-        const data = await restaurant.find({ voorkeur: "like" }).lean();
+        const data = await restaurant.find({ voorkeur: "like" }).lean().exec();
         res.render("favorieten", { data: data });
     } catch {
         console.log("fout bij laden favorieten");
@@ -76,7 +75,7 @@ app.post("/verwijder", async (req, res) => {
         restaurant
             .findOneAndUpdate({ voorkeur: "like" }, { voorkeur: "dislike" })
             .exec();
-        const data = await restaurant.find({ voorkeur: "like" }).lean();
+        const data = await restaurant.find({ voorkeur: "like" }).lean().exec();
         res.render("favorieten", { data: data });
         console.log("dislike");
     } catch {
@@ -87,8 +86,8 @@ app.post("/verwijder", async (req, res) => {
 // Refresh de database
 app.post("/refresh", async (req, res) => {
     try {
-        restaurant.updateMany({}, { voorkeur: "" }).exec();
-        const data = await restaurant.findOne({ voorkeur: "" }).exec();
+        restaurant.updateMany({}, { voorkeur: "" }).lean().exec();
+        const data = await restaurant.findOne({ voorkeur: "" }).lean().exec();
         res.render("home", { data: data });
     } catch {
         console.log("fout bij refreshen");
