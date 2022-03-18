@@ -13,10 +13,16 @@
   --lettertype-kleur2: #ffffff;
   --hoofdkleur-donker: #4934b7;
   --hoofdkleur-licht: #6248e9;
+  --gradient-kleur1: rgba(73, 52, 183, 0.7);
+  --gradient-kleur2: rgba(82, 72, 233, 0.15);
   --accentkleur1: #fc6088;
   --extrakleur-licht: #b4f1b9;
   --extrakleur-donker: #7dc281;
 }
+
+
+
+
 
 /*******************/
 /* ALGEMENE OPMAAK */
@@ -51,16 +57,16 @@ ul li {
   padding: 0;
 }
 
+
+
+
+
 /**********/
 /* HEADER */
 /**********/
 #home {
-  background: rgb(73, 52, 183);
-  background: linear-gradient(
-    180deg,
-    rgba(73, 52, 183, 0.7) 0%,
-    rgba(82, 72, 233, 0.15) 100%
-  );
+  background: var(--hoofdkleur-donker);
+  background: linear-gradient(180deg, var(--gradient-kleur1) 0%, var(--gradient-kleur2) 100%);
 }
 
 #home > header {
@@ -75,6 +81,10 @@ ul li {
   width: 2rem;
   height: auto;
 }
+
+
+
+
 
 /*************************/
 /* CARDS MET RESTAURANTS */
@@ -119,7 +129,7 @@ ul li {
 }
 
 #home > article > div > ul > li {
-  border: 0.1rem solid #4934b7;
+  border: 0.1rem solid var(--hoofdkleur-donker);
   border-radius: 1rem;
   padding: 0.2rem 0.5rem;
 }
@@ -137,6 +147,10 @@ ul li {
   width: 2rem;
   height: auto;
 }
+
+
+
+
 
 /*************************/
 /* NAVIGATIEBALK ONDEROP */
