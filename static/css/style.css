@@ -37,7 +37,6 @@ h4 {
 h1 {
   font-size: 2rem;
   text-align: center;
-  /* color: var(--lettertype-kleur2); */
 }
 
 p,
@@ -67,6 +66,7 @@ ul li {
 #home {
   background: var(--hoofdkleur-donker);
   background: linear-gradient(180deg, var(--gradient-kleur1) 0%, var(--gradient-kleur2) 100%);
+  padding-bottom: 3rem;
 }
 
 #home > header {
@@ -80,6 +80,22 @@ ul li {
 #home > header > form > input[type="image"] {
   width: 2rem;
   height: auto;
+}
+
+
+
+
+
+
+/**********/
+/* QUOTES */
+/**********/
+#home > section {
+  font-size: 1rem;
+  text-align: center;
+  font-family: var(--lettertype-paragraaf);
+  padding: 0rem 5% 1rem 5%;
+  font-style: italic;
 }
 
 
@@ -110,6 +126,11 @@ ul li {
   background-color: var(--lettertype-kleur2);
 }
 
+/* omschrijving restaurant */
+#home > article > div > p {
+  margin: 1rem .5rem;
+}
+
 /* Naam restaurant en prijsindicatie */
 #home > article > div > div {
   display: flex;
@@ -126,6 +147,7 @@ ul li {
   display: flex;
   justify-content: space-around;
   padding-left: 0;
+  margin: .3rem 0;
 }
 
 #home > article > div > ul > li {
@@ -144,11 +166,16 @@ ul li {
 }
 
 #home > article > div > section > form > input[type="image"] {
-  width: 2rem;
+  width: 3rem;
   height: auto;
+  margin: .5rem;
+  padding: .5rem;
 }
 
-
+#home > article > div > section > form > input[type="image"]:hover {
+  background-color: var(--accentkleur1);
+  border-radius: 50%;
+}
 
 
 
