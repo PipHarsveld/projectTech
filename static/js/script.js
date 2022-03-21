@@ -16,7 +16,7 @@ async function getApi(url) {
 
     if (response) {
         //html section element = quote
-        const quote = document.querySelector('section');
+        const quote = document.querySelector('main > section');
         // quote ophalen
         const quoteText = data[getRandomNumber(1643)].text;
         //quote plaatsen in de html
