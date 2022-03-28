@@ -17,6 +17,7 @@
             <p>{{this.omschrijving}}</p>
             <section>
                 <form action="/verwijder" method="POST">
+                    <input type="hidden" name="naam" value="{{this.naam}}">
                     <input type="image" src="../static/img/cancel.png" alt="Dislike button">
                 </form>
             </section>
